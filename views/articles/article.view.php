@@ -1,8 +1,7 @@
 <?php require_once APP_ROOT.'views/layouts/head.view.php'; ?>
 <?php require_once APP_ROOT.'views/layouts/header.view.php'; ?>
 <h1>yourstore.com</h1>	
-   <table> 
-   	<?php// while ($row = mysqli_fetch_array($article)):?>
+   <table>  
    		<tr>
    			<th align="left">título:</th>
    		    <td><?= $article['name'];?> </td>
@@ -21,8 +20,6 @@
 			<th align="left">Precio:</th>
    		    <td>$ <?= $article['price'] ?></td>	
    		</tr>
-   		
-   	<?php //endwhile; ?>
    </table>
    </body>
 </html>

@@ -1,13 +1,13 @@
    <?php
     
     require_once __DIR__.'/../config/app.php';
-    header("Content-Type: text/html;charset=utf-8");
+    
     use App\Libraries\Route;
 
     $url = $_GET['url'] ?? '';
 
     if($url){
-
+      
       $pathArray = explode("/", $url);
 
       $route = ROUTES[$pathArray[0]] ?? false;
@@ -24,7 +24,7 @@
           Route::request($controller,$action,$argument);
         }
 
-      }else{
+      }else{//es para cuando se ingrese una url no válida
         //header('HTTP/1.0 404 Not Found');
         //die('Página no encontrada!!!');
         Route::request(NULL);

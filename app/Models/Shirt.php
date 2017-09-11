@@ -15,8 +15,14 @@ class Shirt{
 	}
 
 	public function view($id){
+		/*
 		$sql = 'select * from shirts where id = '.$id;
 		$sqlResult = $this->conection->returnRequest($sql);
+		return $sqlResult->fetch_assoc();
+		*/
+
+		$sql = 'select * from shirts where id = ?';
+		$sqlResult = $this->conection->viewArticle($sql,$id);
 		return $sqlResult->fetch_assoc();
 	}
 }
